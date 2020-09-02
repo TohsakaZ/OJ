@@ -1,0 +1,5 @@
+.vscode
+build
+a.out
+input.txt
+.DS_Store
