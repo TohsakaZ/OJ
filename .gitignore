@@ -2,4 +2,6 @@
 build
 a.out
 input.txt
+output.txt
+test.cpp
 .DS_Store

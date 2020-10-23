@@ -2,4 +2,4 @@ cmake_minimum_required(VERSION 3.0.0)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(test Uva_1596.cpp)
+add_executable(test Uva_212.cpp)
