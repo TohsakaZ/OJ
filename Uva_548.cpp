@@ -65,6 +65,23 @@ pair<int,int> value(int head){
     
 }
 
+
+int value_no_rescure(){
+    stack<pair<int,int> > s;
+    s.push(make_pair(0,0));
+    int sum=INT32_MAX;
+    int best_ans = -1;
+    while (!s.empty()){
+        int head = s.top().first;
+        int sum = s.top().second;
+        s.pop();
+        sum += v[head];
+        // TODO:
+    }
+
+}
+
+
 int main()
 {
     ifstream fin("input.txt");
