@@ -23,16 +23,24 @@ map<char,int> idx_dir2={
     {'F',2},
 };
 
-struct node 
+class node 
 {
+public:
     node(){};
     node(int r,int c,int dir):r(r),c(c),dir(dir){};
     int r;
     int c;
     int dir;
+    
+    bool operator==(const node& Other) const{
+        if (this->r == Other.r && this->c == Other.c && this->dir == Other.dir){
+            return true;
+        }
+        else{
+            return false;
+        }
+    };
 };
-
-
 
 pair<int,int> d[4][3]={
     {make_pair(0,-1),make_pair(0,1),make_pair(-1,0)},
@@ -67,17 +75,18 @@ int idx[10][10][4];
 int exist[10][10];
 node father[10][10][4];
 
-void print_ans(int beg_x,int beg_y, node n){
-    vector<pair<int,int> >ans;
-    ans.push_back(make_pair(n.r,n.c));
+void print_ans(int beg_x,int beg_y,node start, node n){
+    vector<pair<int,int> > ans;
     while (true) {
-         n = father[n.r][n.c][n.dir];
          ans.push_back(make_pair(n.r,n.c));
-         if (n.r == beg_x && n.c == beg_y){
+         if (n == start){
              break;
          }
+         n = father[n.r][n.c][n.dir];
     }
-    int count =0;
+
+    ans.push_back(make_pair(beg_x, beg_y));
+    int count = 0;
     for (int i =ans.size()-1;i>=0;i--){
         if (count % 10 ==0){
            cout << endl << " "; 
@@ -96,7 +105,7 @@ bool bfs_map(int beg_x,int beg_y,node start,int end_x,int end_y){
         node n = q.front();
         q.pop();
         if (n.r == end_x && n.c==end_y){
-            print_ans(beg_x,beg_y,n);
+            print_ans(beg_x,beg_y,start,n);
             return true;
         }
         // find next point
