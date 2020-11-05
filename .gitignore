@@ -4,4 +4,6 @@ a.out
 input.txt
 output.txt
 test.cpp
+test*
+CMakeLists.txt
 .DS_Store
