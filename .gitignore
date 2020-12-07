@@ -6,4 +6,5 @@ output.txt
 test.cpp
 test*
 CMakeLists.txt
+description
 .DS_Store
