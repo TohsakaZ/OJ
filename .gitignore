@@ -8,3 +8,4 @@ test*
 CMakeLists.txt
 description
 .DS_Store
+test*
