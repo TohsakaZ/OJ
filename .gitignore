@@ -7,5 +7,6 @@ test.cpp
 test*
 CMakeLists.txt
 description
-.DS_Store
 test*
+input*
+.DS_Store
